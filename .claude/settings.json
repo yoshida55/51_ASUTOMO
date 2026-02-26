@@ -4,10 +4,12 @@
       "Bash(netstat -ano)",
       "Bash(test -f \"D:/50_knowledge/01_memo.md\")",
       "Bash(test -f \"D:\\\\50_knowledge\\\\01_memo.md\")",
-      "Bash(\"D:\\\\50_knowledge\\\\01_memo.md\":*)"
+      "Bash(\"D:\\\\50_knowledge\\\\01_memo.md\":*)",
+      "Read(//c/Users/sensh/.claude/skills/memo-format/**)"
     ],
     "additionalDirectories": [
-      "D:\\50_knowledge"
+      "D:\\50_knowledge",
+      "C:\\Users\\sensh\\.claude\\skills\\memo-format"
     ]
   }
 }

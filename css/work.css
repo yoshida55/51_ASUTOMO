@@ -6,7 +6,7 @@
   --side-width: 16rem; /* 両サイドの幅 */
   --section-height: 25rem; /* セクションの高さ */
   --contents-width: 14.4rem; /* コンテンツの最大幅 */
-  --header-height: 10rem; /* ヘッダーの高さ */
+  --header-height: 7rem; /* ヘッダーの高さ */
 }
 
 body {
@@ -32,6 +32,11 @@ body {
   justify-content: space-between; /* ロゴとナビを両端に配置 */
   padding: 0 2rem; /* 左右の余白 */
   z-index: 1000; /* ヘッダーを最前面に表示 */
+}
+
+.header_area.visible {
+  background-color: black; /* スクロールしたら背景を黒に */
+  transition: background-color 0.3s ease; /* 背景色の変化をスムーズに */
 }
 
 .header_logo {
@@ -222,18 +227,12 @@ body {
 /* 背景（高さの基準） */
 .company_background {
   width: 100%;
-  height: 80rem;
-  background-color: #0060c0; /* ビューポートの高さに合わせる */
-}
+  height: 100rem;
+  background: linear-gradient(180deg, #0f467e 0%, #1e83c7 100%);
 
-/* 青い半円装飾 */
-/* .company_circle {
-  width: 100%;
-  height: 40rem;
-  background-color: #0060c0;
-  
-  z-index: 10;
-} */
+  /* 中心を左上に置き、右側へ緩やかに引き伸ばすベースです */
+  clip-path: ellipse(120% 100% at 70% 0%);
+}
 
 /* 写真コンテナ（sectionに重なる） */
 .company_photos {
@@ -249,6 +248,9 @@ body {
   position: absolute;
   z-index: 10;
   height: auto;
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: all 1s ease;
 }
 
 .photo1 {
@@ -273,22 +275,16 @@ body {
 }
 
 .photo5 {
-  top: 55rem;
+  top: 80rem;
   left: 25rem;
-  width: 20rem;
+  width: 18rem;
 }
 
 /* 中央メッセージエリア（sectionに重なる） */
 .company_message {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
-  height: 80rem;
   text-align: center;
-  padding-top: 3rem;
-  z-index: 50; /* index-50--テキスト　10--青い半円計  */
+  padding-top: 10rem;
 }
 
 /* メッセージテキスト */
@@ -303,10 +299,6 @@ body {
   margin-top: 5rem;
   width: 40rem;
   height: auto;
-}
-
-/* VIEW MOREボタン */
-.company_button {
 }
 
 /* ┌─────────────────────────────────────────┐
