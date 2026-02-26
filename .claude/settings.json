@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(netstat -ano)",
+      "Bash(test -f \"D:/50_knowledge/01_memo.md\")",
+      "Bash(test -f \"D:\\\\50_knowledge\\\\01_memo.md\")",
+      "Bash(\"D:\\\\50_knowledge\\\\01_memo.md\":*)"
+    ],
+    "additionalDirectories": [
+      "D:\\50_knowledge"
+    ]
+  }
+}

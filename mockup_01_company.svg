@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="860"
+     viewBox="0 0 560 430" font-family="monospace" font-size="9">
+
+  <!-- 凡例バー -->
+  <rect x="0" y="0" width="560" height="28" fill="#111"/>
+  <rect x="8" y="8" width="12" height="12" fill="none" stroke="#ff8800" stroke-width="2"/>
+  <text x="24" y="19" fill="#ff8800" font-weight="bold">relative</text>
+  <rect x="110" y="8" width="12" height="12" fill="none" stroke="#0055ff" stroke-width="2"/>
+  <text x="126" y="19" fill="#0055ff" font-weight="bold">absolute</text>
+  <rect x="220" y="8" width="12" height="12" fill="none" stroke="#007722" stroke-dasharray="4" stroke-width="2"/>
+  <text x="236" y="19" fill="#007722" font-weight="bold">flex / grid</text>
+
+  <!-- section.company_area: position: relative + display: flex -->
+  <rect x="10" y="35" width="540" height="360" fill="#0d1117" stroke="#ff8800" stroke-width="2.5"/>
+  <rect x="14" y="39" width="532" height="352" fill="none" stroke="#007722" stroke-dasharray="5 3" stroke-width="1.5"/>
+  <text x="16" y="52" fill="#ff8800" font-weight="bold" font-size="10">section.company_area</text>
+  <text x="16" y="64" fill="#ff8800">position: relative</text>
+  <text x="210" y="52" fill="#007722" font-weight="bold" font-size="10">display: flex</text>
+  <text x="210" y="64" fill="#007722">align-items: center  justify-content: center</text>
+
+  <!-- div.company_photos: position: absolute, inset: 0 -->
+  <rect x="18" y="72" width="524" height="318" fill="none" stroke="#0055ff" stroke-dasharray="3 2" stroke-width="1.5"/>
+  <text x="22" y="84" fill="#0055ff" font-weight="bold">div.company_photos</text>
+  <text x="22" y="95" fill="#0055ff">position: absolute  inset: 0</text>
+
+  <!-- img.photo1: 左上 -->
+  <rect x="22" y="102" width="120" height="82" fill="#1a2033" stroke="#0055ff" stroke-width="1.5"/>
+  <text x="28" y="118" fill="#0055ff" font-weight="bold">img.company_photo_img.photo1</text>
+  <text x="28" y="130" fill="#0055ff">position: absolute</text>
+  <text x="28" y="142" fill="#0055ff">top: 4rem  left: 2rem</text>
+  <text x="28" y="156" fill="#556" font-size="8">message_img_01.jpg</text>
+  <text x="28" y="168" fill="#556" font-size="8">[ 写真① ]</text>
+
+  <!-- img.photo2: 右上 -->
+  <rect x="418" y="102" width="120" height="82" fill="#1a2033" stroke="#0055ff" stroke-width="1.5"/>
+  <text x="422" y="118" fill="#0055ff" font-weight="bold">img ...photo2</text>
+  <text x="422" y="130" fill="#0055ff">position: absolute</text>
+  <text x="422" y="142" fill="#0055ff">top: 4rem</text>
+  <text x="422" y="154" fill="#0055ff">right: 2rem</text>
+  <text x="422" y="168" fill="#556" font-size="8">message_img_02.jpg</text>
+
+  <!-- img.photo3: 左中 -->
+  <rect x="22" y="225" width="110" height="80" fill="#1a2033" stroke="#0055ff" stroke-width="1.5"/>
+  <text x="28" y="241" fill="#0055ff" font-weight="bold">img ...photo3</text>
+  <text x="28" y="253" fill="#0055ff">position: absolute</text>
+  <text x="28" y="265" fill="#0055ff">top: 55%  left: 2rem</text>
+  <text x="28" y="278" fill="#556" font-size="8">message_img_03.jpg</text>
+  <text x="28" y="290" fill="#556" font-size="8">[ 写真③ ]</text>
+
+  <!-- img.photo4: 右中 -->
+  <rect x="428" y="225" width="110" height="80" fill="#1a2033" stroke="#0055ff" stroke-width="1.5"/>
+  <text x="432" y="241" fill="#0055ff" font-weight="bold">img ...photo4</text>
+  <text x="432" y="253" fill="#0055ff">position: absolute</text>
+  <text x="432" y="265" fill="#0055ff">top: 55%  right: 2rem</text>
+  <text x="432" y="278" fill="#556" font-size="8">message_img_04.jpg</text>
+  <text x="432" y="290" fill="#556" font-size="8">[ 写真④ ]</text>
+
+  <!-- img.photo5: 下中央 -->
+  <rect x="218" y="332" width="124" height="54" fill="#1a2033" stroke="#0055ff" stroke-width="1.5"/>
+  <text x="224" y="348" fill="#0055ff" font-weight="bold">img ...photo5</text>
+  <text x="224" y="360" fill="#0055ff">position: absolute</text>
+  <text x="224" y="372" fill="#0055ff">bottom: 2rem  left: 50%</text>
+
+  <!-- div.company_message: flexの子 → 自動で中央配置 -->
+  <rect x="175" y="138" width="210" height="178" fill="#0a1f0f" stroke="#007722" stroke-width="2"/>
+  <text x="180" y="154" fill="#007722" font-weight="bold">div.company_message</text>
+  <text x="180" y="166" fill="#007722">flexの子 → 自動で中央</text>
+  <text x="180" y="178" fill="#007722">text-align: center</text>
+
+  <!-- p.company_text x3 -->
+  <rect x="183" y="184" width="196" height="13" fill="#0f2a15" stroke="#333" stroke-width="1"/>
+  <text x="187" y="194" fill="#9a9" font-size="8">p.company_text 「人々の明日を支える使命感」</text>
+
+  <rect x="183" y="200" width="196" height="13" fill="#0f2a15" stroke="#333" stroke-width="1"/>
+  <text x="187" y="210" fill="#9a9" font-size="8">p.company_text 「積み上げてきた確かな信頼」</text>
+
+  <rect x="183" y="216" width="196" height="13" fill="#0f2a15" stroke="#333" stroke-width="1"/>
+  <text x="187" y="226" fill="#9a9" font-size="8">p.company_text 「それに燃ける情熱が、明日を灯す。」</text>
+
+  <!-- img.company_catchcopy -->
+  <rect x="183" y="234" width="196" height="22" fill="#0f2a15" stroke="#333" stroke-width="1"/>
+  <text x="187" y="247" fill="#9a9" font-size="8">img.company_catchcopy</text>
+  <text x="187" y="258" fill="#556" font-size="7">message_txt_01.png（手書き文字）</text>
+
+  <!-- a.company_button -->
+  <rect x="215" y="262" width="134" height="18" fill="#0d2030" stroke="#007722" stroke-width="1.5" rx="9"/>
+  <text x="282" y="274" fill="#007722" font-weight="bold" font-size="8" text-anchor="middle">a.company_button  VIEW MORE</text>
+
+  <!-- 補足 -->
+  <rect x="10" y="403" width="540" height="22" fill="#1a1a1a" stroke="#444" stroke-width="1"/>
+  <text x="16" y="415" fill="#888" font-size="8">&#x203B; company_background div は不要になる。高さ・背景色は company_area に直接指定。company_circle は ::before か独立 div で対応。</text>
+
+</svg>

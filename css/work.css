@@ -9,13 +9,75 @@
   --header-height: 10rem; /* ヘッダーの高さ */
 }
 
+body {
+  background-color: black; /* ← ここで変わる */
+}
+
 /* ┌─────────────────────────────────────────┐
    │ ヘッダー                                │
    │ - 上に固定                              │
    │ - ロゴとナビを横並び                    │
-   │ - 右端に「募集要項」「エントリー」ボタン│
+   │ - 右端に「募集要項」「エントリー」ボタ
+   ン│
    └─────────────────────────────────────────┘ */
+.header_area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* ロゴとナビを両端に配置 */
+  padding: 0 2rem; /* 左右の余白 */
+  z-index: 1000; /* ヘッダーを最前面に表示 */
+}
 
+.header_logo {
+  width: 25rem;
+  height: auto;
+  margin-left: 2rem;
+}
+.header_nav {
+  display: flex;
+  gap: 2rem; /* ナビゲーションの間隔 */
+  margin-right: 25rem;
+}
+
+.header_nav_item {
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+}
+
+.header_buttons {
+  display: flex;
+  gap: 1rem; /* ボタンの間隔 */
+}
+
+.header_button {
+  width: 11rem;
+  height: 4rem;
+  font-size: 1.2rem;
+  border-radius: 4rem;
+  text-decoration: none;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color1 {
+  background-color: black;
+  color: greenyellow;
+}
+
+.color2 {
+  background-color: orange;
+  color: white;
+}
 /* ┌─────────────────────────────────────────┐
    │ メインビジュアル                        │
    │ - 全幅の背景画像                        │
@@ -23,12 +85,229 @@
    │ - キャッチコピーをabsoluteで配置        │
    └─────────────────────────────────────────┘ */
 
-/* ┌─────────────────────────────────────────┐
+/* メインビジュアル全体（背景+テキストを重ねる） */
+.mainvisual_area {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* ビューポートの高さに合わせる */
+}
+
+/* スライド背景コンテナ */
+.mainvisual_bg {
+  position: relative;
+  height: 100vh;
+
+  width: 100%;
+  overflow: hidden;
+  border-color: black;
+  border-radius: 0 0 50% 50%/ 0px 0px 40px 50px;
+}
+
+/* スライド背景1枚（アニメーション切替用） */
+.mainvisual_slide {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  will-change: opacity, transform; /* ← GPUで処理させる */
+  /* 既存のスタイルに追加 */
+  transform-origin: center center; /* 中心から縮小 */
+  animation: slideshow 15s infinite; /* 5s × 3枚 */
+  background-size: cover;
+  background-position: center;
+}
+
+/* 1枚目 */
+.mainvisual_slide1 {
+  background-image: url("../img/top/hero_img_01.jpg");
+  animation-delay: 0s;
+}
+
+/* 2枚目 */
+.mainvisual_slide2 {
+  background-image: url("../img/top/hero_img_06.jpg");
+  animation-delay: 5s;
+}
+
+/* 3枚目 */
+.mainvisual_slide3 {
+  background-image: url("../img/top/hero_img_10.jpg");
+  animation-delay: 10s;
+}
+
+@keyframes slideshow {
+  0% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+  8% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  33% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  41% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.08);
+  } /* ← 追加：0%と同じ値 */
+}
+
+.mainvisual_content {
+  position: absolute;
+  bottom: 5rem;
+  left: 7rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 左寄せ */
+  justify-content: flex-start; /* 縦中央 */
+  z-index: 10; /* 背景より前面に表示 */
+}
+
+.mainvisual_overlay {
+  position: relative;
+}
+
+/* テキストコンテナ */
+.mainvisual_title {
+  background-color: black;
+
+  width: 50rem;
+  height: auto;
+
+  object-fit: cover;
+}
+
+/* キャッチコピー文 */
+.mainvisual_sub_title1 {
+  width: fit-content;
+  width: 20rem;
+  height: 5rem;
+  background-color: black;
+  font-size: 3rem;
+  color: white;
+  margin-top: 2rem;
+}
+
+/* キャッチコピー文 */
+.mainvisual_sub_title2 {
+  width: fit-content;
+  height: 5rem;
+  background-color: black;
+  font-size: 3rem;
+  color: white;
+  margin-top: 1rem;
+}
+
+/* ┌─────────────────────────────────────────┐➂
    │ 会社を知る                              │
-   │ - 「Company」の英字見出し               │
-   │ - 「3分でわかる」数字セクション         │
-   │ - 事業を知るカード                      │
+   │ - 青いグラデーション背景                │
+   │ - 社員写真5枚（各位置に配置）           │
+   │ - 中央メッセージ + 手書き文字 + ボタン  │
    └─────────────────────────────────────────┘ */
+
+/* セクション全体（position: relativeのキャンバス） */
+.company_area {
+  position: relative;
+  width: 100%;
+  height: auto; /* ビューポートの高さに合わせる */
+}
+
+/* 背景（高さの基準） */
+.company_background {
+  width: 100%;
+  height: 80rem;
+  background-color: #0060c0; /* ビューポートの高さに合わせる */
+}
+
+/* 青い半円装飾 */
+/* .company_circle {
+  width: 100%;
+  height: 40rem;
+  background-color: #0060c0;
+  
+  z-index: 10;
+} */
+
+/* 写真コンテナ（sectionに重なる） */
+.company_photos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 社員写真1枚 */
+.company_photo_img {
+  position: absolute;
+  z-index: 10;
+  height: auto;
+}
+
+.photo1 {
+  top: 5rem;
+  left: 5rem;
+  width: 10rem;
+}
+.photo2 {
+  top: 20rem;
+  right: 5rem;
+  width: 15rem;
+}
+.photo3 {
+  top: 30rem;
+  left: 0;
+  width: 20rem;
+}
+.photo4 {
+  top: 50rem;
+  right: 15rem;
+  width: 20rem;
+}
+
+.photo5 {
+  top: 55rem;
+  left: 25rem;
+  width: 20rem;
+}
+
+/* 中央メッセージエリア（sectionに重なる） */
+.company_message {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 80rem;
+  text-align: center;
+  padding-top: 3rem;
+  z-index: 50; /* index-50--テキスト　10--青い半円計  */
+}
+
+/* メッセージテキスト */
+.company_text {
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* 手書きキャッチコピー画像 */
+.company_catchcopy {
+  margin-top: 5rem;
+  width: 40rem;
+  height: auto;
+}
+
+/* VIEW MOREボタン */
+.company_button {
+}
 
 /* ┌─────────────────────────────────────────┐
    │ 人を知る                                │
