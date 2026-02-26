@@ -95,6 +95,7 @@ body {
   position: relative;
   width: 100%;
   height: 100vh; /* ビューポートの高さに合わせる */
+  background: #3e73ac;
 }
 
 /* スライド背景コンテナ */
@@ -228,7 +229,7 @@ body {
 .company_background {
   width: 100%;
   height: 100rem;
-  background: linear-gradient(180deg, #0f467e 0%, #1e83c7 100%);
+  background: linear-gradient(180deg, #3e73ac 0%, #1e83c7 100%);
 
   /* 中心を左上に置き、右側へ緩やかに引き伸ばすベースです */
   clip-path: ellipse(120% 100% at 70% 0%);
