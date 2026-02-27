@@ -46,23 +46,30 @@
         <p class="mainvisual_sub_title1 color1">明日を灯す。</p>
         <p class="mainvisual_sub_title2 color2">その情熱を燃やせ。</p>
       </div>
+
+      <!-- タイトル上に動画を配置（PCのみ表示） -->
+      <video class="mainvisual_video" autoplay muted loop playsinline>
+        <source src="img/move/アストモスグループ物流会社 採用サイト.mp4" type="video/mp4" />
+      </video>
     </section>
 
     <!-- ===============================================➂
-     会社を知る
+     メッセージ
      =============================================== -->
     <section class="company_area">
       <!-- 背景（高さの基準） -->
-      <div class="company_background">
-        <div class="company_message">
-          <p class="company_text">人々の明日を支える使命感</p>
-          <p class="company_text">積み上げてきた確かな信頼</p>
-          <p class="company_text">それに燃ける情熱が、明日を灯す。</p>
-          <img class="company_catchcopy" src="img/top/message_txt_01.png" alt="ただの運ぶを超えていけ。届けるは明日を灯すエネルギー。" />
+      <div class="company_white_color">
+        <div class="company_background">
+          <div class="company_message">
+            <p class="company_text">人々の明日を支える使命感</p>
+            <p class="company_text">積み上げてきた確かな信頼</p>
+            <p class="company_text">それに燃ける情熱が、明日を灯す。</p>
+            <img class="company_catchcopy" src="img/top/message_txt_01.png" alt="ただの運ぶを超えていけ。届けるは明日を灯すエネルギー。" />
+          </div>
         </div>
       </div>
-      <!-- 青い半円装飾 -->
-      <div class="company_circle"> </div>
+      <div class="company_white_circle"></div>
+      <!-- 白い半円装飾 -->
 
       <!-- 写真コンテナ（sectionに重なる） -->
       <div class="company_photos">
@@ -75,9 +82,19 @@
     </section>
 
     <!-- ===============================================
-     人を知る
+     会社を知る
      =============================================== -->
-    <section></section>
+    <section class="company_area">
+      <h2 class="co_title"></h2>
+      <span class="co_sub_title">会社を知る</span>
+      <p>明日を灯す。未来を届ける。</p>
+
+      <!-- フレックスで画像を左右に配置する -->
+      <div class="company_images">
+        <img src="img/btn_about_txt.png" alt="社員のイメージ" />
+        <img src="img/btn_about_img.png" alt="社員のイメージ" />
+      </div>
+    </section>
 
     <!-- ===============================================
      働く環境を知る

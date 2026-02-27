@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WXWNQQHJ');</script>
+<!-- End Google Tag Manager -->
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>404｜アストモスグループ物流会社 採用サイト</title>
+  <meta name="description" content="アストモスグループ物流会社の採用サイトです。アストモスグループはLPガスを全国に届ける物流会社です。福利厚生や職種紹介、社員インタビューなど様々な採用向け情報を紹介しています。">
+
+  <!-- favicon/apple-touch-icon -->
+  <link rel="icon" href="/favicon.ico">
+
+  <!-- canonical -->
+  <link rel="canonical" href="https://astomosgroup-logistics-recruit.jp/404/">
+
+  <!-- ogp -->
+  <meta property="og:site_name" content="404｜アストモスグループ物流会社 採用サイト">
+  <meta property="og:url" content="https://astomosgroup-logistics-recruit.jp/">
+  <meta property="og:type" content="website">
+  <!-- website or article -->
+  <meta property="og:title" content="404｜アストモスグループ物流会社 採用サイト">
+  <meta property="og:description" content="アストモスグループ物流会社の採用サイトです。アストモスグループはLPガスを全国に届ける物流会社です。福利厚生や職種紹介、社員インタビューなど様々な採用向け情報を紹介しています。">
+  <meta property="og:image" content="https://astomosgroup-logistics-recruit.jp/assets/images/ogp.png">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ogp twitter -->
+  <!-- summary_large_image or summary -->
+  <meta name="twitter:image" content="https://astomosgroup-logistics-recruit.jp/assets/images/ogp.png">
+  <meta name="twitter:description" content="アストモスグループ物流会社の採用サイトです。アストモスグループはLPガスを全国に届ける物流会社です。福利厚生や職種紹介、社員インタビューなど様々な採用向け情報を紹介しています。">
+
+  <!--サイト共通CSS-->
+<link rel="stylesheet" href="/assets/css/swiper.css" media="all">
+<link rel="stylesheet" href="/assets/css/style.css" media="all">
+
+<!--サイト共通JS-->
+<script src="/assets/js/jquery.js" defer></script>
+<script src="/assets/js/swiper.js" defer></script>
+<script src="/assets/js/gsap.min.js" defer></script>
+<script src="/assets/js/ScrollTrigger.min.js" defer></script>
+<script src="/assets/js/script.js" defer></script>
+</head>
+
+<body class="error">
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXWNQQHJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+  <div id="container">
+    <header id="header" class="header">
+  <div class="header__logo"><a href="/"><img src="/assets/images/logo_bk.png" srcset="/assets/images/logo_bk@2x.png 2x" width="330" height="31" alt="アストモスグループ物流会社 採用サイト" decoding="async"></a></div>
+  <div class="header__hamburger"><span></span></div>
+  <nav class="header__nav">
+    <div class="header__global">
+      <ul>
+        <li class="header__global--top"><a href="/"><span data-en-txt="Top">トップ</span></a></li>
+        <li class="header__global--message"><a href="/message/"><span data-hover="採用メッセージ" data-en-txt="Message">採用メッセージ</span></a></li>
+        <li class="header__global--company">
+          <dl>
+            <dt><span data-hover="会社を知る" data-en-txt="Company">会社を知る</span></dt>
+            <dd>
+              <ul>
+                <li><a href="/about/">3分でわかる<br>アストモスグループ物流会社</a></li>
+                <li><a href="/business/">事業紹介</a></li>
+              </ul>
+            </dd>
+          </dl>
+        </li>
+        <li class="header__global--interview"><a href="/interview/"><span data-hover="人を知る" data-en-txt="Member">人を知る</span></a></li>
+        <li class="header__global--culture"><a href="/culture/"><span data-hover="働く環境を知る" data-en-txt="Culture">働く環境を知る</span></a></li>
+      </ul>
+    </div>
+    <div class="header__conversion">
+      <ul>
+        <li class="header__conversion--information"><a href="/information/"><span data-hover="募集要項">募集要項</span></a></li>
+        <li class="header__conversion--entry"><a href="/entry/"><span data-hover="エントリー">エントリー</span></a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+    <main id="main" class="main">
+      <section class="sect error__section">
+        <div class="error__inner sect__inner">
+          <div class="sect__intro js-anim u-anim-title">
+            <p class="error__code sect__ttl u-anim-title__item" data-en-txt="404"></p>
+            <h1 class="error__copy sect__copy">お探しのページが<br class="sp">見つかりません</h1>
+            <div class="error__text">
+              お探しのページはございません。ページが削除または移動されたか、<br class="pc">一時的にアクセスができない状態にある可能性がございます。<br>
+              サイト上下のナビゲーションより、ご希望のページをお探しください。
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="footer">
+  <div class="sect__inner">
+    <div class="footer__logo">
+      <a href="/"><img src="/assets/images/logo_wh.png" srcset="/assets/images/logo_wh@2x.png 2x" width="426" height="40" alt="アストモスグループ物流会社 採用サイト" decoding="async"></a>
+      <p>アストモスエネルギードライバー採用サイト</p>
+    </div>
+
+    <nav class="footer__global">
+      <div class="footer__global--category footer__global--top">
+        <h3><a href="/"><span data-en-txt="Top">トップ</span></a></h3>
+      </div>
+      <div class="footer__global--category footer__global--interview">
+        <h3><a href="/interview/"><span data-en-txt="Member">人を知る</span></a></h3>
+      </div>
+      <div class="footer__global--category footer__global--company">
+        <h3><span data-en-txt="Company">会社を知る</span></h3>
+        <ul>
+          <li><a href="/about/">3分でわかる<br>アストモスグループ<br class="sp">物流会社</a></li>
+          <li><a href="/business/">事業紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer__global--category footer__global--culture">
+        <h3><a href="/culture/"><span data-en-txt="Culture">働く環境を知る</span></a></h3>
+        <ul>
+          <li><a href="/culture/#benefits">福利厚生</a></li>
+          <li><a href="/culture/#career">キャリア支援</a></li>
+        </ul>
+      </div>
+      <div class="footer__global--category footer__global--message">
+        <h3><a href="/message/"><span data-en-txt="Message">採用メッセージ</span></a></h3>
+      </div>
+    </nav>
+
+    <div class="footer__copy js-anim">
+      <h2><img src="/assets/images/copy_wh.svg" width="382" height="93" alt="完全燃焼" decoding="async"></h2>
+      <p>明日を灯す。その情熱を燃やせ。</p>
+      <div class="footer__copy-flame"><video src="/assets/images/flame.mp4" width="480" height="584" playsinline autoplay loop muted></video></div>
+    </div>
+
+    <nav class="footer__utility">
+      <ul>
+        <li class="footer__utility--corporate"><a href="https://www.astomos.jp/" target="_blank">コーポレートサイト</a></li>
+        <li class="footer__utility--privacy"><a href="https://www.astomos.jp/privacy" target="_blank">個人情報保護方針</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer__copyright">&copy; アストモスグループ物流会社</div>
+  </div>
+</footer>
+  </div>
+</body>
+
+</html>
