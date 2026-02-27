@@ -346,33 +346,31 @@ body {
   height: 70rem;
   height: auto; /* ビューポートの高さに合わせる */
   background: rgb(220, 211, 211);
-
+  color: blue;
   padding: 0 var(--side-width);
-  overflow: hidden;
 }
 
 .company_title {
+  margin-top: -;
   font-size: 9rem;
   font-weight: bold;
-  color: blue;
 }
 .company_sub_title {
   font-size: 1.5rem;
-  color: blue;
 }
 
 .company_msg {
   font-size: 3rem;
   font-weight: bold;
-  color: blue;
   margin-bottom: 5rem;
 }
 .company_sub_title {
   font-size: 1.5rem;
-  color: blue;
 }
 .company_img_container {
   display: flex;
+  width: 100%;
+  overflow: hidden;
 }
 
 .company_img {
@@ -380,7 +378,7 @@ body {
   height: auto;
   border-radius: 1rem; /* カードの角を丸くする */
 
-  object-fit: cover; /* 画像をカードにフィットさせる */
+  object-fit: contain; /* 画像をカードにフィットさせる */
 }
 
 /* ┌─────────────────────────────────────────┐
