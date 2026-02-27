@@ -12,7 +12,7 @@ window.addEventListener("scroll", function () {
 function checkNewsAnimation() {
   // ★初めて表示されたときのみ実行される
   // :not(.is-visible) = .is-visibleクラスが無い要素だけ処理
-  $(".company_photo_img:not(.is-visible)").each(function () {
+  $(".message_photo_img:not(.is-visible)").each(function () {
     let scroll = $(window).scrollTop(); // スクロールした距離
     let target = $(this).offset().top; // この要素までの距離
     let windowHeight = $(window).height(); // 画面の高さ

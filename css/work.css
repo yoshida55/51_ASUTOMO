@@ -234,7 +234,7 @@ body {
    └─────────────────────────────────────────┘ */
 
 /* セクション全体（position: relativeのキャンバス） */
-.company_area {
+.message_area {
   position: relative;
   width: 100%;
   height: 70rem;
@@ -242,12 +242,12 @@ body {
   background: rgb(220, 211, 211);
 }
 
-.company_white_color {
+.message_white_color {
   background-color: white;
 }
 
 /* 背景（高さの基準） */
-.company_background {
+.message_background {
   width: 100%;
   height: 70rem;
   background: linear-gradient(180deg, blue 0%, #1e83c7 100%);
@@ -257,7 +257,7 @@ body {
 }
 
 /* 背景 白い丸いグラデーションは、  */
-.company_white_circle {
+.message_white_circle {
   height: 20rem;
   width: 100%;
   background: white;
@@ -266,7 +266,7 @@ body {
 }
 
 /* 写真コンテナ。数種類の細かい画像（sectionに重なる） */
-.company_photos {
+.message_photos {
   position: absolute;
   top: 0;
   left: 0;
@@ -276,7 +276,7 @@ body {
 }
 
 /* 社員写真1枚 */
-.company_photo_img {
+.message_photo_img {
   position: absolute;
   z-index: 10; /* debug 一時的に０にする*/
   height: auto;
@@ -313,21 +313,21 @@ body {
 }
 
 /* 中央メッセージエリア（sectionに重なる） */
-.company_message {
+.message_content {
   width: 100%;
   text-align: center;
   padding-top: 10rem;
 }
 
 /* メッセージテキスト */
-.company_text {
+.message_text {
   margin-top: 2rem;
   font-size: 2rem;
   font-weight: bold;
 }
 
 /* 手書きキャッチコピー画像 */
-.company_catchcopy {
+.message_catchcopy {
   margin-top: 5rem;
   width: 40rem;
   height: auto;
@@ -348,10 +348,39 @@ body {
   background: rgb(220, 211, 211);
 
   padding: 0 var(--side-width);
+  overflow: hidden;
 }
-.company_images {
+
+.company_title {
+  font-size: 9rem;
+  font-weight: bold;
+  color: blue;
+}
+.company_sub_title {
+  font-size: 1.5rem;
+  color: blue;
+}
+
+.company_msg {
+  font-size: 3rem;
+  font-weight: bold;
+  color: blue;
+  margin-bottom: 5rem;
+}
+.company_sub_title {
+  font-size: 1.5rem;
+  color: blue;
+}
+.company_img_container {
   display: flex;
-  gap: 2rem; /* カード間のスペース */
+}
+
+.company_img {
+  width: 50%;
+  height: auto;
+  border-radius: 1rem; /* カードの角を丸くする */
+
+  object-fit: cover; /* 画像をカードにフィットさせる */
 }
 
 /* ┌─────────────────────────────────────────┐
