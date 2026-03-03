@@ -51,9 +51,28 @@ body {
 }
 
 .header_nav_item {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: white;
   text-decoration: none;
+
+  overflow: hidden; /* アニメーションのため、はみ出す部分を隠す */
+}
+
+.header_text {
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.header_text::after {
+  content: attr(data-text);
+  position: absolute;
+  transform: translateY(100%);
+  left: 0;
+  color: white;
+}
+
+.header_text:hover {
+  transform: translateY(-100%);
 }
 
 .header_buttons {
@@ -64,7 +83,7 @@ body {
 .header_button {
   width: 11rem;
   height: 4rem;
-  font-size: 1.2rem;
+  font-size: 1.3em;
   border-radius: 4rem;
   text-decoration: none;
   font-weight: bold;
@@ -166,7 +185,7 @@ body {
 
 .mainvisual_content {
   position: absolute;
-  bottom: 24rem;
+  top: 40rem;
   left: 7rem;
 
   display: flex;
@@ -179,7 +198,7 @@ body {
 /* 火の動画は、背景とテキストの間に配置して、テキストを引き立てる役割を果たします。動画内の黒い部分が背景を透過して見えるようにするために、mix-blend-mode: screen; を使用しています。これにより、動画の黒い部分が背景と合成されて、背景が透けて見えるようになります。 */
 .mainvisual_video {
   position: absolute;
-  bottom: 22rem;
+  top: 23rem;
   left: 27rem;
   width: 25rem;
   height: auto;
@@ -201,25 +220,26 @@ body {
 }
 
 /* キャッチコピー文 */
-.mainvisual_sub_title1 {
+.mainvisual_sub_title {
   width: fit-content;
-  width: 20rem;
   height: 5rem;
   font-size: 3rem;
+
   color: blue;
-  margin-top: 2rem;
+
   background-color: white;
 }
 
-/* キャッチコピー文 */
-.mainvisual_sub_title2 {
-  width: fit-content;
-  height: 5rem;
+.title_position1 {
+  position: absolute;
+  top: 40rem;
+  left: 7rem;
+}
 
-  font-size: 3rem;
-  color: blue;
-  margin-top: 1rem;
-  background-color: white;
+.title_position2 {
+  position: absolute;
+  top: 50rem;
+  left: 7rem;
 }
 
 /* ┌─────────────────────────────────────────┐➂
