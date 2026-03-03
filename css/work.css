@@ -179,7 +179,7 @@ body {
 /* 火の動画は、背景とテキストの間に配置して、テキストを引き立てる役割を果たします。動画内の黒い部分が背景を透過して見えるようにするために、mix-blend-mode: screen; を使用しています。これにより、動画の黒い部分が背景と合成されて、背景が透けて見えるようになります。 */
 .mainvisual_video {
   position: absolute;
-  bottom: 18rem;
+  bottom: 22rem;
   left: 27rem;
   width: 25rem;
   height: auto;
@@ -187,8 +187,8 @@ body {
   z-index: 20;
   background-color: transparent;
 
-  /* 2. 【重要】動画内の黒い部分を透過させる設定を追加 */
-  mix-blend-mode: screen; /* ← これを追加！ */
+  /*動画内の黒い部分を透過させる設定 */
+  mix-blend-mode: screen;
 }
 
 /* テキストコンテナ */

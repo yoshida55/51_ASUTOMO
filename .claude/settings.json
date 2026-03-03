@@ -5,11 +5,13 @@
       "Bash(test -f \"D:/50_knowledge/01_memo.md\")",
       "Bash(test -f \"D:\\\\50_knowledge\\\\01_memo.md\")",
       "Bash(\"D:\\\\50_knowledge\\\\01_memo.md\":*)",
-      "Read(//c/Users/sensh/.claude/skills/memo-format/**)"
+      "Read(//c/Users/sensh/.claude/skills/memo-format/**)",
+      "Read(//c/Users/sensh/.claude/skills/snippet/**)"
     ],
     "additionalDirectories": [
       "D:\\50_knowledge",
-      "C:\\Users\\sensh\\.claude\\skills\\memo-format"
+      "C:\\Users\\sensh\\.claude\\skills\\memo-format",
+      "C:\\Users\\sensh\\.claude\\skills\\snippet"
     ]
   }
 }
