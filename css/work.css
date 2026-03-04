@@ -113,7 +113,7 @@ body {
 .mainvisual_area {
   position: relative;
   width: 100%;
-  height: 100vh; /* ビューポートの高さに合わせる */
+  height: 75rem; /* ビューポートの高さに合わせる */
   background: blue;
 }
 
@@ -223,7 +223,8 @@ body {
 .mainvisual_sub_title {
   width: fit-content;
   height: 5rem;
-  font-size: 3rem;
+  font-size: 3.5rem;
+  font-weight: bold;
 
   color: blue;
 
@@ -231,13 +232,13 @@ body {
 }
 
 .title_position1 {
-  position: absolute;
+  margin-top: 2rem;
   top: 40rem;
   left: 7rem;
 }
 
 .title_position2 {
-  position: absolute;
+  margin-top: 1rem;
   top: 50rem;
   left: 7rem;
 }
@@ -253,24 +254,23 @@ body {
 .message_area {
   position: relative;
   width: 100%;
-  height: 60rem;
-  height: auto; /* ビューポートの高さに合わせる */
+  height: 120rem;
   background: rgb(220, 211, 211);
   overflow: hidden;
 }
 
-.message_white_color {
+.message_content_wrapper {
   background-color: white;
 }
 
 /* 背景（高さの基準） */
 .message_background {
   width: 100%;
-  height: 60rem;
+  height: 80rem;
   background: linear-gradient(180deg, blue 0%, #1e83c7 100%);
 
   /* 中心を左上に置き、右側へ緩やかに引き伸ばすベースです */
-  clip-path: ellipse(120% 100% at 70% 0%);
+  clip-path: ellipse(100% 100% at 70% 0%);
 }
 
 /* 背景 白い丸いグラデーションは、  */
@@ -338,8 +338,9 @@ body {
 
 /* メッセージテキスト */
 .message_text {
+  color: white;
   margin-top: 2rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
@@ -364,22 +365,23 @@ body {
   background: rgb(220, 211, 211);
   color: blue;
   padding: 0 var(--side-width);
+  border: 0.5rem solid red;
 }
 
 .company_title {
   font-size: 9rem;
   font-weight: bold;
-  transform: translateY(-12rem);
+  transform: translateY(-9rem);
 }
 .company_sub_title {
   font-size: 1.5rem;
-  transform: translateY(-12rem);
+  transform: translateY(-9rem);
 }
 
 .company_msg {
   font-size: 3rem;
   font-weight: bold;
-  transform: translateY(-10rem);
+  transform: translateY(-7rem);
 }
 .company_sub_title {
   font-size: 1.5rem;
