@@ -6,7 +6,11 @@
       "Bash(test -f \"D:\\\\50_knowledge\\\\01_memo.md\")",
       "Bash(\"D:\\\\50_knowledge\\\\01_memo.md\":*)",
       "Read(//c/Users/sensh/.claude/skills/memo-format/**)",
-      "Read(//c/Users/sensh/.claude/skills/snippet/**)"
+      "Read(//c/Users/sensh/.claude/skills/snippet/**)",
+      "Bash(curl -s -X POST http://127.0.0.1:3848/highlight-line -H \"Content-Type: application/json\" --data-binary \"{\"\"filePath\"\": \"\"D:/50_knowledge/01_memo.md\"\", \"\"lineNumber\"\": 8294}\")",
+      "WebFetch(domain:astomosgroup-logistics-recruit.jp)",
+      "Bash(curl -s -X POST http://127.0.0.1:3848/highlight-line -H \"Content-Type: application/json\" --data-binary \"{\"\"filePath\"\": \"\"D:/50_knowledge/01_memo.md\"\", \"\"lineNumber\"\": 8373}\")",
+      "Bash(curl -s -X POST http://127.0.0.1:3848/highlight-line -H \"Content-Type: application/json\" --data-binary \"{\"\"filePath\"\": \"\"D:/50_knowledge/01_memo.md\"\", \"\"lineNumber\"\": 8433}\")"
     ],
     "additionalDirectories": [
       "D:\\50_knowledge",

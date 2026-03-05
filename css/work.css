@@ -395,34 +395,144 @@ body {
 
   display: flex; /* 子要素を横並びにする */
   align-content: flex-start;
-  margin-right: flex-start;
-
   flex-wrap: wrap;
+
   column-gap: 1rem;
   row-gap: 1rem;
 }
 
-/* 左側の白いエリア */
-.summary_contena {
+/* 上段の２画像それぞれの共通親コンテナ */
+.summary_container {
   width: calc(50% - 0.5rem); /* gapの半分を引く */
-  height: 50rem;
-  overflow: hidden;
+  height: auto;
+  /* overflow: hidden; */
   object-fit: cover;
-}
+  position: relative; /* ここで文字；→を絶対配置するため */
 
-.summary_logo {
-  width: 100%;
-  height: 39rem;
-  margin-top: 5.5rem;
-  object-fit: contain;
-  display: block;
   background-color: white;
 }
 
-.summary_arrow {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
+/* 画像の共通スタイル。上段の２画像に適用される。imgタグ */
+.summary_logo {
+  padding: 2rem 2rem;
+  position: relative;
+  display: block;
+  width: 100%;
+
+  object-fit: contain;
+
+  z-index: 5; /* 画像より前面に表示 */
+}
+/* 文字のあとに〇で囲んだ→矢印  親コンテナ*/
+.view_more_btn {
+  position: absolute;
+  width: 15rem;
+  gap: 1rem;
+  bottom: 1rem;
+  left: 3rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  z-index: 15; /* 画像より前面に表示 */
+}
+
+.view_more_text {
+  display: block;
+  width: 70%;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 2rem;
+
   font-weight: bold;
+  color: transparent; /* ← 実テキスト非表示 */
+
+  overflow: hidden;
+  position: relative;
+}
+
+.view_more_text::before {
+  content: attr(data-text);
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  color: black;
+
+  transform: translateY(0); /* 初期状態ではテキストが見える位置 */
+  transition: transform 0.3s ease;
+}
+
+.view_more_text::after {
+  content: attr(data-text);
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  color: black;
+
+  transform: translateY(100%); /* 下に隠す */
+  transition: transform 0.3s ease;
+}
+
+/* ホバー時に同時にアニメーションをけかける*/
+.summary_container:hover .view_more_text::before {
+  transform: translateY(-100%); /* 上に隠す */
+}
+
+.summary_container:hover .view_more_text::after {
+  transform: translateY(0%);
+}
+
+.summary_container:hover .view_more_text::after {
+  transform: translateY(0%);
+}
+
+.arrow_icon {
+  flex: 1;
+  background: #111;
+
+  color: #fff;
+  font-size: 1.5rem;
+
+  border-radius: 50%;
+  width: 4rem;
+  font-weight: bold;
+
+  height: 4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative; /* ★ ::before の基準点 */
+  overflow: hidden; /* ★ はみ出し防止 */
+
+  isolation: isolate; /* ★ これを追加（新しい重なり文脈を作る） */
+}
+
+/* --- ホバーで中心から広がる色 --- */
+.arrow_icon::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0%, #fff 44%, #00b4f7 100%);
+  /* ↑ 中心=白  中間=白  外側=青 */
+  transform: scale(0); /* ★ 通常は見えない */
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  z-index: -1; /* ★ これを追加！矢印テキストの奥に配置 */
+}
+
+/* --- 親ホバーで広がる --- */
+.summary_container:hover .arrow_icon::before {
+  transform: scale(1.02); /* ★ 中心から外に広がる */
+}
+
+/* --- 親ホバーで広がる --- */
+.summary_container:hover .arrow_icon {
   color: black;
 }
 
@@ -457,27 +567,6 @@ body {
 .bg_blue {
   background-color: #e0f0ff;
   padding: 0.2rem 0.5rem;
-}
-
-.view_more_btn {
-  font-size: 3rem;
-  color: black;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-weight: bold;
-}
-
-.arrow_icon {
-  background: #111;
-  color: #fff;
-  border-radius: 50%;
-  width: 9rem;
-  height: 9rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* ┌─────────────────────────────────────────┐
