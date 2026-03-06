@@ -10,7 +10,7 @@
 }
 
 body {
-  background-color: #f0f2f5;
+  background-color: white;
 }
 
 /* ┌─────────────────────────────────────────┐
@@ -381,9 +381,7 @@ body {
   font-weight: bold;
   transform: translateY(-7rem);
 }
-.company_sub_title {
-  font-size: 1.5rem;
-}
+
 /* 親の箱（カード全体） */
 .summary_area {
   width: 100%;
@@ -477,6 +475,7 @@ body {
 }
 
 /* ホバー時に同時にアニメーションをけかける*/
+
 .summary_container:hover .view_more_text::before {
   transform: translateY(-100%); /* 上に隠す */
 }
@@ -570,9 +569,7 @@ body {
 }
 
 /* ┌─────────────────────────────────────────┐
-   │ 働く環境を知る                          │
-   │ - 福利厚生・キャリア支援                │
-   │ - カード型で横並び                      │
+   │ 事業紹介                        │                   │
    └─────────────────────────────────────────┘ */
 .business_area {
   width: 100%;
@@ -584,6 +581,13 @@ body {
   display: flex;
   align-items: center;
   justify-self: center;
+
+  /* 中心を左上に置き、右側へ緩やかに引き伸ばすベースです */
+  clip-path: ellipse(140% 100% at 20% 0%);
+
+  position: relative;
+
+  z-index: -2;
 }
 
 .car_img {
@@ -602,13 +606,192 @@ body {
 }
 
 /* ┌─────────────────────────────────────────┐
-   │ 採用情報                                │
+   │ 人を知る                                │
    │ - 「明日を灯す仲間を募集」テキスト      │
    │ - 募集要項・エントリーボタン            │
    └─────────────────────────────────────────┘ */
+.human_area {
+  width: 100%;
+  height: 80rem; /* ビューポートの高さに合わせる */
+  background: white;
+  color: blue;
+  padding: 0 0 var(--side-width) var(--side-width);
+
+  /* 中心を左上に置き、右側へ緩やかに引き伸ばすベースです */
+  clip-path: ellipse(140% 100% at 20% 0%);
+
+  position: relative;
+  z-index: 1;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.slider .slick-slide {
+  margin: 0 0.5rem; /* 左右にギャップ */
+}
+
+.slider_item {
+  width: calc((100% - 3rem) / 3.5); /* 3枚表示、gapを考慮して計算 */
+  height: 100%;
+  flex-shrink: 0;
+}
+
+/* 文字のあとに〇で囲んだ→矢印  親コンテナ*/
+.human_view_btn {
+  position: absolute;
+  width: 18rem;
+  gap: 1rem;
+  top: 6rem;
+  right: 5rem;
+
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+
+  z-index: 15; /* 画像より前面に表示 */
+}
+
+.human_view_btn:hover .view_more_text::before {
+  transform: translateY(-100%); /* 上に隠す */
+}
+
+.human_view_btn:hover .view_more_text::after {
+  transform: translateY(0%);
+}
+
+.human_view_btn:hover .view_more_text::after {
+  transform: translateY(0%);
+}
+
+/* --- 親ホバーで広がる --- */
+.human_view_btn:hover .arrow_icon::before {
+  transform: scale(1.02); /* ★ 中心から外に広がる */
+}
+
+/* --- 親ホバーで広がる --- */
+.human_view_btn:hover .arrow_icon {
+  color: black;
+}
 
 /* ┌─────────────────────────────────────────┐
-   │ フッター                                │
-   │ - ロゴ+サイトマップリンク              │
-   │ - コピーライト                          │
+   │ Culture                            │                       │
    └─────────────────────────────────────────┘ */
+.culture_area {
+  width: 100%;
+  height: 80rem; /* ビューポートの高さに合わせる */
+  background: rgb(220, 211, 211);
+  color: blue;
+  padding: 0 var(--side-width);
+
+  /* 中心を左上に置き、右側へ緩やかに引き伸ばすベースです */
+  clip-path: ellipse(140% 100% at 70% 0%);
+
+  position: relative;
+  z-index: 2; /* ← これで culture が recruit の上に重なる */
+}
+
+.culture_sub_title {
+  font-size: 1.5rem;
+  transform: translateY(-9rem);
+}
+
+.culture_list {
+  display: flex;
+  gap: 1rem;
+  margin-top: 5rem;
+}
+
+.culture_item {
+  width: calc(50% - 0.5rem);
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* ┌─────────────────────────────────────────┐
+   │ Join us! 採用情報                        │                       │
+   └─────────────────────────────────────────┘ */
+
+.recruit_area {
+  width: 100%;
+  height: 130rem; /* ビューポートの高さに合わせる */
+  background: blue;
+  color: white;
+  padding: 0 var(--side-width);
+
+  margin-top: -5rem;
+  padding-top: 2rem; /* culture の曲線より下にコンテンツを押す */
+
+  /* 中心を左上に置き、右側へ緩やかに引き伸ばすベースです */
+  clip-path: ellipse(140% 100% at 20% 0%);
+  position: relative;
+  z-index: 1; /* culture(z:2) より低い → culture の曲線が前に出る */
+}
+
+.recruit_buttons {
+  display: flex;
+  width: 30rem;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+.recruit_list {
+  display: flex;
+  width: 35rem;
+  height: 10rem;
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 2rem;
+
+  padding: 1rem 2rem;
+}
+
+.recruit_color1 {
+  background-color: white;
+  color: black;
+}
+
+.recruit_color2 {
+  background-color: orange;
+  color: white;
+}
+
+.recruit_button {
+  height: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+}
+
+.recruit_arrow {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  /* 円形 */
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

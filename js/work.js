@@ -34,3 +34,29 @@ $(window).scroll(checkNewsAnimation);
 
 // ★ページ読込時も実行（最初から見える要素に対応）
 $(document).ready(checkNewsAnimation);
+
+// CDNslickのJavaScriptを読み込んでから、slick関数を呼び出す
+$(function () {
+  $(".slider").slick({
+    arrows: false,
+    autoplay: false,
+    adaptiveHeight: true,
+    centerMode: true,
+    centerPadding: "0.3rem",
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+          centerPadding: "5rem",
+        },
+      },
+    ],
+  });
+  // ← ここに追加（slick初期化の後）
+  $(".human_view_btn").on("click", function () {
+    $(".slider").slick("slickNext");
+  });
+});

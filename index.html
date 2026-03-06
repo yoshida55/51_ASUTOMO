@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/work.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
   </head>
   <body>
     <!-- ===============================================
@@ -116,6 +118,7 @@
         <img class="summary_under_logo" src="/img/btn_about_us_img.jpg" alt="" />
         <img class="summary_under_logo" src="/img/btn_reasons_img.jpg" alt="" />
       </div>
+      <!-- /.summary_area -->
     </section>
 
     <!-- ===============================================
@@ -130,19 +133,76 @@
         <p class="message_text">それに燃ける情熱が、明日を灯す。</p>
         <img class="message_catchcopy" src="img/btn_business_txt.png" alt="ただの運ぶを超えていけ。届けるは明日を灯すエネルギー。" />
       </div>
+      <!-- 白い半円形の帯 -->
+      <div class="business_white_circle"></div>
     </section>
 
     <!-- ===============================================
-     採用情報
+     人を知る
      =============================================== -->
-    <section></section>
+    <section class="human_area">
+      <h2 class="company_title">Member<span class="company_sub_title">人を知る</span></h2>
+      <p class="company_msg">人を、街を、灯せ。</p>
+      <!-- ディスプレイフレックスで４枚の画像を並べるとともに、⇒矢印でスライダーを実装する。 -->
+      <div>
+        <div class="slider">
+          <div class="slider_item"><img src="img/interview/interview_thumb_01.png" alt="社員のイメージ" /></div>
+          <div class="slider_item"><img src="img/interview/interview_thumb_02.png" alt="社員のイメージ" /></div>
+          <div class="slider_item"><img src="img/interview/interview_thumb_03.png" alt="社員のイメージ" /></div>
+          <div class="slider_item"><img src="img/interview/interview_thumb_04.png" alt="社員のイメージ" /></div>
+        </div>
+      </div>
+      <!-- 文字のあとに〇で囲んだ→矢印 -->
+      <button type="button" class="human_view_btn">
+        <span class="view_more_text" data-text="View More"></span>
+        <span class="arrow_icon">→</span>
+      </button>
+    </section>
 
+    <!-- ===============================================
+     Culture
+     =============================================== -->
+    <section class="culture_area">
+      <h2 class="company_title">Culture<span class="culture_sub_title">働く環境を知る</span></h2>
+      <p class="company_msg">完全燃焼できる環境がここにある。</p>
+
+      <div class="culture_list">
+        <img class="culture_item" src="img/btn_career_img.jpg" alt="会議" />
+        <img class="culture_item" src="img/btn_career_img.jpg" alt="会議" />
+      </div>
+    </section>
+    <!-- ===============================================
+     Join us! 採用情報
+     =============================================== -->
+    <section class="recruit_area">
+      <h2 class="company_title">join us<span class="company_sub_title">採用情報</span></h2>
+      <p class="company_msg">私たちとともに<br />“明日を灯す”仲間を募集しています。</p>
+
+      <!-- 募集要項とエントリーフォームボタン -->
+
+      <div class="recruit_buttons">
+        <div class="recruit_list recruit_color1">
+          <span class="recruit_button" href="#">募集要項</span>
+          <a class="recruit_arrow" href="#">→</a>
+        </div>
+        <div class="recruit_list recruit_color2">
+          <span class="recruit_button" href="#">エントリーフォーム</span>
+          <a class="recruit_arrow" href="#">→</a>
+        </div>
+      </div>
+    </section>
     <!-- ===============================================
      フッター
      =============================================== -->
+
     <footer></footer>
+
     <!-- jQuery読み込み（CDN） -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- slick JavaScript -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
     <script src="js/work.js"></script>
   </body>
 </html>
