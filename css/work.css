@@ -134,9 +134,8 @@ body {
   height: 100%;
   opacity: 0;
   position: absolute;
-  will-change: opacity, transform; /* ← GPUで処理させる */
-  /* 既存のスタイルに追加 */
-  transform-origin: center center; /* 中心から縮小 */
+  will-change: opacity, transform;
+  transform-origin: center center;
   animation: slideshow 15s infinite; /* 5s × 3枚 */
   background-size: cover;
   background-position: center;
@@ -145,7 +144,6 @@ body {
 /* 1枚目 */
 .mainvisual_slide1 {
   background-image: url("../img/top/hero_img_01.jpg");
-  animation-delay: 0s;
 }
 
 /* 2枚目 */
@@ -180,7 +178,7 @@ body {
   100% {
     opacity: 0;
     transform: scale(1.08);
-  } /* ← 追加：0%と同じ値 */
+  }
 }
 
 .mainvisual_content {
@@ -192,21 +190,18 @@ body {
   flex-direction: column;
   align-items: flex-start; /* 左寄せ */
   justify-content: flex-start; /* 縦中央 */
-  z-index: 10; /* 背景より前面に表示 */
+  z-index: 10;
 }
 
-/* 火の動画は、背景とテキストの間に配置して、テキストを引き立てる役割を果たします。動画内の黒い部分が背景を透過して見えるようにするために、mix-blend-mode: screen; を使用しています。これにより、動画の黒い部分が背景と合成されて、背景が透けて見えるようになります。 */
 .mainvisual_video {
   position: absolute;
   top: 23rem;
   left: 27rem;
+  z-index: 20;
   width: 25rem;
   height: auto;
   object-fit: cover;
-  z-index: 20;
   background-color: transparent;
-
-  /*動画内の黒い部分を透過させる設定 */
   mix-blend-mode: screen;
 }
 
@@ -289,13 +284,13 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 10; /* debug 一時的に０にする*/
+  z-index: 10;
 }
 
 /* 社員写真1枚 */
 .message_photo_img {
   position: absolute;
-  z-index: 10; /* debug 一時的に０にする*/
+  z-index: 10;
   height: auto;
   opacity: 0;
   transform: translateY(3rem);
@@ -389,7 +384,6 @@ body {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  width: 100%;
 
   display: flex; /* 子要素を横並びにする */
   align-content: flex-start;
@@ -419,13 +413,12 @@ body {
 
   object-fit: contain;
 
-  z-index: 5; /* 画像より前面に表示 */
+  z-index: 5;
 }
 /* 文字のあとに〇で囲んだ→矢印  親コンテナ*/
 .view_more_btn {
   position: absolute;
   width: 15rem;
-  gap: 1rem;
   bottom: 1rem;
   left: 3rem;
 
@@ -474,14 +467,10 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* ホバー時に同時にアニメーションをけかける*/
+/* ホバー時に同時にアニメーションをかける */
 
 .summary_container:hover .view_more_text::before {
   transform: translateY(-100%); /* 上に隠す */
-}
-
-.summary_container:hover .view_more_text::after {
-  transform: translateY(0%);
 }
 
 .summary_container:hover .view_more_text::after {
@@ -522,7 +511,7 @@ body {
   /* ↑ 中心=白  中間=白  外側=青 */
   transform: scale(0); /* ★ 通常は見えない */
   transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  z-index: -1; /* ★ これを追加！矢印テキストの奥に配置 */
+  z-index: -1;
 }
 
 /* --- 親ホバーで広がる --- */
@@ -549,45 +538,21 @@ body {
   display: block;
 }
 
-/* ▼ 見本画像に寄せるためのテキスト装飾（お好みで調整してください） ▼ */
-.summary_main_title {
-  font-size: 2.2rem;
-  color: #004dc0;
-  line-height: 1.5;
-  font-weight: bold;
-}
-
-.large_number {
-  font-size: 5rem;
-  font-style: italic;
-  font-weight: normal;
-}
-
-.bg_blue {
-  background-color: #e0f0ff;
-  padding: 0.2rem 0.5rem;
-}
-
 /* ┌─────────────────────────────────────────┐
    │ 事業紹介                        │                   │
    └─────────────────────────────────────────┘ */
 .business_area {
+  position: relative;
+  z-index: -1;
   width: 100%;
-  height: 130rem; /* ビューポートの高さに合わせる */
+  height: 100rem;
   background: rgb(220, 211, 211);
   color: blue;
   padding: 0 var(--side-width);
-
+  clip-path: ellipse(140% 100% at 20% 0%);
   display: flex;
   align-items: center;
   justify-self: center;
-
-  /* 中心を左上に置き、右側へ緩やかに引き伸ばすベースです */
-  clip-path: ellipse(140% 100% at 20% 0%);
-
-  position: relative;
-
-  z-index: -2;
 }
 
 .car_img {
@@ -607,21 +572,48 @@ body {
 
 /* ┌─────────────────────────────────────────┐
    │ 人を知る                                │
-   │ - 「明日を灯す仲間を募集」テキスト      │
-   │ - 募集要項・エントリーボタン            │
+   │ - 社員インタビュースライダー（4枚）     │
+   │ - View Moreボタン                       │
    └─────────────────────────────────────────┘ */
 .human_area {
   width: 100%;
-  height: 80rem; /* ビューポートの高さに合わせる */
-  background: white;
+  height: 100rem; /* ビューポートの高さに合わせる */
+  /* background: rgb(255, 255, 255); */
   color: blue;
   padding: 0 0 var(--side-width) var(--side-width);
 
-  /* 中心を左上に置き、右側へ緩やかに引き伸ばすベースです */
-  clip-path: ellipse(140% 100% at 20% 0%);
+  margin-top: -10rem; /* human_areaの楕円の下にもぐり込む */
 
   position: relative;
-  z-index: 1;
+}
+
+/* 疑似要素を利用してz-indexをを子要素（タイトル）より下に配置する */
+.human_area::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  /* 中心を左上に置き、右側へ緩やかに引き伸ばすベースです */
+  clip-path: ellipse(140% 100% at 70% 0%);
+  z-index: -2; /* タイトルより下に配置 */
+}
+
+.human_area .company_title {
+  transform: translateY(-9rem);
+}
+
+.human_area .culture_sub_title {
+  font-size: 1.5rem;
+  transform: translateY(-9rem);
+}
+.human_area .company_title,
+.human_area .culture_sub_title,
+.human_area .company_msg {
+  position: relative;
+  z-index: 6; /* これでタイトルが背景より前に出る */
 }
 
 .slider {
@@ -669,10 +661,6 @@ body {
   transform: translateY(0%);
 }
 
-.human_view_btn:hover .view_more_text::after {
-  transform: translateY(0%);
-}
-
 /* --- 親ホバーで広がる --- */
 .human_view_btn:hover .arrow_icon::before {
   transform: scale(1.02); /* ★ 中心から外に広がる */
@@ -689,20 +677,41 @@ body {
 .culture_area {
   width: 100%;
   height: 80rem; /* ビューポートの高さに合わせる */
-  background: rgb(220, 211, 211);
   color: blue;
   padding: 0 var(--side-width);
 
-  /* 中心を左上に置き、右側へ緩やかに引き伸ばすベースです */
-  clip-path: ellipse(140% 100% at 70% 0%);
+  margin-top: -20rem; /* human_areaの楕円の下にもぐり込む */
 
   position: relative;
-  z-index: 2; /* ← これで culture が recruit の上に重なる */
 }
 
-.culture_sub_title {
+/* 疑似要素を利用してz-indexをを子要素（タイトル）より下に配置する */
+.culture_area::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(220, 211, 211);
+  /* 中心を左上に置き、右側へ緩やかに引き伸ばすベースです */
+  clip-path: ellipse(140% 100% at 70% 0%);
+  z-index: -3; /* タイトルより下に配置 */
+}
+
+.culture_area .company_title {
+  transform: translateY(-9rem);
+}
+
+.culture_area .culture_sub_title {
   font-size: 1.5rem;
   transform: translateY(-9rem);
+}
+.culture_area .company_title,
+.culture_area .culture_sub_title,
+.culture_area .company_msg {
+  position: relative;
+  z-index: 6; /* これでタイトルが背景より前に出る */
 }
 
 .culture_list {
@@ -725,17 +734,35 @@ body {
 .recruit_area {
   width: 100%;
   height: 130rem; /* ビューポートの高さに合わせる */
-  background: blue;
   color: white;
   padding: 0 var(--side-width);
 
-  margin-top: -5rem;
-  padding-top: 2rem; /* culture の曲線より下にコンテンツを押す */
+  margin-top: -20rem; /* human_areaの楕円の下にもぐり込む */
 
   /* 中心を左上に置き、右側へ緩やかに引き伸ばすベースです */
-  clip-path: ellipse(140% 100% at 20% 0%);
   position: relative;
-  z-index: 1; /* culture(z:2) より低い → culture の曲線が前に出る */
+}
+
+.recruit_area::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  clip-path: ellipse(140% 100% at 20% 0%);
+  z-index: -4;
+}
+
+.recruit_area .company_title {
+  position: relative;
+  z-index: 4; /* これでタイトルが背景より前に出る */
+}
+
+.recruit_area .company_msg {
+  position: relative;
+  z-index: 4; /* これでタイトルが背景より前に出る */
 }
 
 .recruit_buttons {
