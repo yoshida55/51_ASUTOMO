@@ -13,7 +13,13 @@
       "Bash(curl -s -X POST http://127.0.0.1:3848/highlight-line -H \"Content-Type: application/json\" --data-binary \"{\"\"filePath\"\": \"\"D:/50_knowledge/01_memo.md\"\", \"\"lineNumber\"\": 8433}\")",
       "Bash(curl -s -X POST http://127.0.0.1:3848/highlight-line -H \"Content-Type: application/json\" --data-binary \"{\"\"filePath\"\": \"\"D:/50_knowledge/01_memo.md\"\", \"\"lineNumber\"\": 8706}\")",
       "Read(//c/Users/sensh/.claude/skills/review-css/**)",
-      "Bash(curl -s -X POST http://127.0.0.1:3848/highlight-line -H \"Content-Type: application/json\" --data-binary \"{\"\"filePath\"\": \"\"D:/50_knowledge/01_memo.md\"\", \"\"lineNumber\"\": 8797}\")"
+      "Bash(curl -s -X POST http://127.0.0.1:3848/highlight-line -H \"Content-Type: application/json\" --data-binary \"{\"\"filePath\"\": \"\"D:/50_knowledge/01_memo.md\"\", \"\"lineNumber\"\": 8797}\")",
+      "Bash(curl -s -X POST http://127.0.0.1:3848/highlight-line -H \"Content-Type: application/json\" --data-binary \"{\"\"filePath\"\": \"\"D:/50_knowledge/01_memo.md\"\", \"\"lineNumber\"\": 11154}\")",
+      "Bash(powershell -Command \":*)",
+      "Bash(powershell -Command \"$file = ''D:\\\\50_knowledge\\\\01_memo.md''; $lines = [System.IO.File]::ReadAllLines\\($file, [System.Text.Encoding]::UTF8\\); $filtered = $lines | Where-Object { $_-notmatch ''^### 具体的なレイヤ'' }; [System.IO.File]::WriteAllLines\\($file, $filtered, [System.Text.Encoding]::UTF8\\); Write-Host ''done''\")",
+      "Bash(python3 -c \":*)",
+      "Bash(python -c \"import re; f=open\\(''D:/50_knowledge/01_memo.md'',''r'',encoding=''utf-8''\\); c=f.read\\(\\); f.close\\(\\); c=re.sub\\(r''\\\\n### \\\\u5177\\\\u4f53\\\\u7684\\\\u306a\\\\u30ec\\\\u30a4\\\\u30e4[^\\\\n]*\\\\n'',''\\\\n'',c\\); f=open\\(''D:/50_knowledge/01_memo.md'',''w'',encoding=''utf-8''\\); f.write\\(c\\); f.close\\(\\); print\\(''done''\\)\")",
+      "Bash(curl -s -X POST http://127.0.0.1:3848/highlight-line -H \"Content-Type: application/json\" --data-binary \"{\"\"filePath\"\": \"\"D:/50_knowledge/01_memo.md\"\", \"\"lineNumber\"\": 11085}\")"
     ],
     "additionalDirectories": [
       "D:\\50_knowledge",

@@ -741,9 +741,15 @@ body {
 
   /* 中心を左上に置き、右側へ緩やかに引き伸ばすベースです */
   position: relative;
+  z-index: -4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: blue;
+  clip-path: ellipse(140% 100% at 20% 0%);
 }
 
-.recruit_area::after {
+/* .recruit_area::after {
   content: "";
   position: absolute;
   top: 0;
@@ -753,16 +759,12 @@ body {
   background-color: blue;
   clip-path: ellipse(140% 100% at 20% 0%);
   z-index: -4;
-}
+} */
 
 .recruit_area .company_title {
-  position: relative;
-  z-index: 4; /* これでタイトルが背景より前に出る */
 }
 
 .recruit_area .company_msg {
-  position: relative;
-  z-index: 4; /* これでタイトルが背景より前に出る */
 }
 
 .recruit_buttons {
@@ -821,4 +823,69 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* ===== recruit スクロールアニメーション ===== */
+.recruit_right {
+  display: flex;
+  gap: 1.6rem;
+  height: 100%;
+  overflow: hidden;
+  top: 22rem;
+  right: var(--side-width);
+  width: 42%;
+}
+
+.recruit_scroll_area {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.recruit_col {
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.recruit_col--up {
+  animation: recruit-scroll-up 15s linear infinite;
+}
+
+.recruit_col--down {
+  animation: recruit-scroll-down 15s linear infinite;
+}
+
+.recruit_img_list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding-bottom: 1.6rem;
+}
+
+.recruit_img_list img {
+  width: 100%;
+  height: 28rem;
+  object-fit: cover;
+  border-radius: 0.8rem;
+}
+
+@keyframes recruit-scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes recruit-scroll-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

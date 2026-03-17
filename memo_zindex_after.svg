@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 600" font-family="sans-serif">
+
+  <!-- 背景 -->
+  <rect width="820" height="600" fill="#1a1a2e"/>
+
+  <!-- タイトル -->
+  <text x="410" y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="#ffffff">::after で背景だけ下げる設計</text>
+
+  <!-- ==============================
+       左側：::after 設計（正解）
+  ============================== -->
+  <text x="200" y="68" text-anchor="middle" font-size="13" fill="#4ade80" font-weight="bold">✅ ::after 設計（正解）</text>
+
+  <!-- culture_area -->
+  <rect x="40" y="85" width="320" height="70" rx="8" fill="#3b5bdb" opacity="0.9"/>
+  <text x="200" y="110" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">culture_area</text>
+  <text x="200" y="130" text-anchor="middle" font-size="11" fill="#a5d8ff">z-index: 5　clip-path: 波形</text>
+  <text x="200" y="148" text-anchor="middle" font-size="10" fill="#74c0fc">（白い波が下に飛び出ている）</text>
+
+  <!-- 矢印：潜り込む -->
+  <text x="200" y="175" text-anchor="middle" font-size="11" fill="#ffd43b">↓ margin-top: -20rem で潜り込む</text>
+
+  <!-- recruit_area（親・箱なし） -->
+  <rect x="40" y="185" width="320" height="170" rx="8" fill="#2d2d2d" stroke="#555" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="200" y="207" text-anchor="middle" font-size="12" fill="#aaa" font-weight="bold">recruit_area（親）</text>
+  <text x="200" y="223" text-anchor="middle" font-size="11" fill="#ff6b6b" font-weight="bold">z-index: なし　← 箱を作らない！</text>
+
+  <!-- company_title -->
+  <rect x="60" y="233" width="200" height="36" rx="6" fill="#2f9e44"/>
+  <text x="160" y="249" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">company_title</text>
+  <text x="160" y="263" text-anchor="middle" font-size="10" fill="#b2f2bb">z-index: 6　→ 外の世界で比較</text>
+
+  <!-- ::after -->
+  <rect x="60" y="279" width="200" height="36" rx="6" fill="#862e9c" opacity="0.9"/>
+  <text x="160" y="295" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">::after（青い背景）</text>
+  <text x="160" y="309" text-anchor="middle" font-size="10" fill="#e599f7">z-index: -4　→ 外の世界で比較</text>
+
+  <!-- 矢印・結果 -->
+  <line x1="160" y1="230" x2="160" y2="178" stroke="#4ade80" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="270" y="215" font-size="10" fill="#4ade80">culture_area(5)より</text>
+  <text x="270" y="229" font-size="10" fill="#4ade80">前に出る ✅</text>
+
+  <line x1="160" y1="282" x2="265" y2="230" stroke="#f06595" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="270" y="268" font-size="10" fill="#f06595">culture_area(5)より</text>
+  <text x="270" y="282" font-size="10" fill="#f06595">後ろに下がる ✅</text>
+
+  <!-- 結果ボックス -->
+  <rect x="40" y="370" width="320" height="50" rx="8" fill="#1a3a1a" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="200" y="391" text-anchor="middle" font-size="11" fill="#4ade80" font-weight="bold">背景は後ろ・タイトルは前　→　両立できる！</text>
+  <text x="200" y="408" text-anchor="middle" font-size="10" fill="#69db7c">::after と子要素がページ全体で自由に競える</text>
+
+  <!-- ==============================
+       右側：親に z-index（NG）
+  ============================== -->
+  <text x="620" y="68" text-anchor="middle" font-size="13" fill="#ff6b6b" font-weight="bold">❌ 親に z-index をつけた場合</text>
+
+  <!-- culture_area -->
+  <rect x="460" y="85" width="320" height="70" rx="8" fill="#3b5bdb" opacity="0.9"/>
+  <text x="620" y="110" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">culture_area</text>
+  <text x="620" y="130" text-anchor="middle" font-size="11" fill="#a5d8ff">z-index: 5　clip-path: 波形</text>
+
+  <!-- 矢印 -->
+  <text x="620" y="175" text-anchor="middle" font-size="11" fill="#ffd43b">↓ margin-top: -20rem で潜り込む</text>
+
+  <!-- recruit_area（親・箱あり） -->
+  <rect x="460" y="185" width="320" height="170" rx="8" fill="#3a1a1a" stroke="#ff6b6b" stroke-width="2"/>
+  <text x="620" y="207" text-anchor="middle" font-size="12" fill="#ffa8a8" font-weight="bold">recruit_area（親）</text>
+  <text x="620" y="223" text-anchor="middle" font-size="11" fill="#ff6b6b" font-weight="bold">z-index: -4　← 箱ができる！</text>
+
+  <!-- 箱の説明 -->
+  <rect x="475" y="230" width="290" height="115" rx="6" fill="#2a0a0a" stroke="#ff6b6b" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="620" y="248" text-anchor="middle" font-size="10" fill="#ff9999">この箱の中に閉じ込められる</text>
+
+  <!-- company_title（閉じ込め） -->
+  <rect x="490" y="255" width="170" height="32" rx="5" fill="#2f4a2f" opacity="0.7"/>
+  <text x="575" y="269" text-anchor="middle" font-size="10" fill="#aaa" font-weight="bold">company_title z-index: 6</text>
+  <text x="575" y="282" text-anchor="middle" font-size="9" fill="#777">箱の中だけで有効　外に出られない</text>
+
+  <!-- ::after（閉じ込め） -->
+  <rect x="490" y="296" width="170" height="32" rx="5" fill="#4a2a4a" opacity="0.7"/>
+  <text x="575" y="310" text-anchor="middle" font-size="10" fill="#aaa" font-weight="bold">::after z-index: -4</text>
+  <text x="575" y="323" text-anchor="middle" font-size="9" fill="#777">同じく箱の中だけ</text>
+
+  <!-- 箱全体が -4 -->
+  <text x="770" y="260" text-anchor="end" font-size="10" fill="#ff6b6b">箱ごと</text>
+  <text x="770" y="273" text-anchor="end" font-size="10" fill="#ff6b6b">z-index: -4</text>
+  <text x="770" y="286" text-anchor="end" font-size="10" fill="#ff6b6b">として動く</text>
+
+  <!-- 結果ボックス -->
+  <rect x="460" y="370" width="320" height="50" rx="8" fill="#3a1a1a" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="620" y="391" text-anchor="middle" font-size="11" fill="#ff6b6b" font-weight="bold">タイトルも背景も一緒に後ろへ</text>
+  <text x="620" y="408" text-anchor="middle" font-size="10" fill="#ff9999">タイトルが culture_area の前に出られない ❌</text>
+
+  <!-- 区切り線 -->
+  <line x1="410" y1="60" x2="410" y2="450" stroke="#444" stroke-width="1.5" stroke-dasharray="6,3"/>
+
+  <!-- ==============================
+       下部：まとめ
+  ============================== -->
+  <rect x="40" y="450" width="740" height="130" rx="10" fill="#0d1b2a" stroke="#4a6fa5" stroke-width="1.5"/>
+  <text x="410" y="474" text-anchor="middle" font-size="13" fill="#74c0fc" font-weight="bold">まとめ：::after を使う理由</text>
+
+  <text x="70" y="498" font-size="11" fill="#adb5bd">🎯 やりたいこと</text>
+  <text x="200" y="498" font-size="11" fill="#fff">背景（青い波）は上のセクションより後ろ　かつ　タイトルは上のセクションより前</text>
+
+  <text x="70" y="520" font-size="11" fill="#adb5bd">⚠️ 問題</text>
+  <text x="200" y="520" font-size="11" fill="#fff">親に z-index を付けると「箱」ができて子要素が外に出られなくなる</text>
+
+  <text x="70" y="542" font-size="11" fill="#adb5bd">✅ 解決</text>
+  <text x="200" y="542" font-size="11" fill="#fff">親に z-index を付けない　→　背景を ::after（疑似要素）に分離して z-index を付ける</text>
+
+  <text x="70" y="564" font-size="11" fill="#adb5bd">結果</text>
+  <text x="200" y="564" font-size="11" fill="#4ade80">::after（背景）と company_title（テキスト）がページ全体で自由に z-index を競える！</text>
+
+  <!-- 矢印マーカー -->
+  <defs>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#4ade80"/>
+    </marker>
+  </defs>
+
+</svg>
