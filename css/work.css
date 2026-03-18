@@ -536,6 +536,8 @@ body {
   height: 30rem;
   object-fit: cover;
   display: block;
+
+  margin-top: 20rem;
 }
 
 /* ┌─────────────────────────────────────────┐
