@@ -29,6 +29,21 @@ function checkNewsAnimation() {
   });
 }
 
+
+window.addEventListener('scroll',function(){
+  const aaa = document.querySelector("aa");
+});
+
+
+$(function () {
+  if(window.innerWidth < 768) {
+    // ★スマホの場合は、最初から全ての要素を表示する
+    $(".message_photo_img").css({
+      opacity: "1",
+      transform: "translateY(0)",
+    });
+    // ★スクロールイベントを解除する
+
 // ★スクロール時
 $(window).scroll(checkNewsAnimation);
 
